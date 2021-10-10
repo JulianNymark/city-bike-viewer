@@ -1,5 +1,7 @@
 import { Map } from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer, useMapEvents } from "react-leaflet";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBicycle, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import { setCurrentPosition } from "./utils";
 import { StationData } from "./StationData";
 import './StationMap.css';
@@ -42,9 +44,9 @@ export const StationMap = ({data}: {data: StationData}) => {
         return <Marker position={[station.lat, station.lon]}>
           <Popup>
             <h3>{station.name}</h3>
-            :bike-icon: {station.bikesAvailable}
+            <FontAwesomeIcon icon={faBicycle}/> {station.bikesAvailable}
             <br/>
-            :lock-icon: {station.docksAvailable}
+            <FontAwesomeIcon icon={faLockOpen}/> {station.docksAvailable}
           </Popup>
         </Marker>;
       })}
