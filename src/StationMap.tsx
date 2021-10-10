@@ -38,11 +38,6 @@ export const StationMap = ({data}: {data: StationData}) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" // use this while developing (looks messy, but it's free)
         // url="https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=64e88e13938c4874889cbc2e68171f06" // TODO: use this for "final" (looks nice but only 15k request limit per month is free)
       />
-      <Marker position={[59.9, 10.7]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
       {data.map( (station) => {
         return <Marker position={[station.lat, station.lon]}>
           <Popup>
