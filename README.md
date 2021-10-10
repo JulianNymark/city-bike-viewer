@@ -1,3 +1,17 @@
+# hosted version
+
+https://juliannymark.com/apps/city-bike-viewer
+
+## TODO
+
+- [x] design & decision (went with a map style design, since data is spatial, leaflet is nice and FLOSS)
+- [x] working map visualization + data fetching (mvp)
+- [x] show current location + centering + sticky tracking (until first drag event)
+  - [ ] add button to re-enable centering & sticky tracking of current location
+- [ ] filtering on bikes available vs docks available (usually you're interested in one of them, but not both)
+- [ ] swap out default `<Marker>` rendering with something more custom and informative, showing number of bikes & docks available (reduce total clicks)
+- [ ] beautify: fancier CSS + icons
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
