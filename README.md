@@ -9,8 +9,8 @@ https://juliannymark.com/apps/city-bike-viewer
 - [x] show current location + centering + sticky tracking (until first drag event)
   - [ ] add button to re-enable centering & sticky tracking of current location
 - [ ] filtering on bikes available vs docks available (usually you're interested in one of them, but not both)
-- [ ] swap out default `<Marker>` rendering with something more custom and informative, showing number of bikes & docks available (reduce total clicks)
-- [ ] beautify: fancier CSS + icons
+- [x] swap out default `<Marker>` rendering with something more custom and informative, showing number of bikes & docks available (reduce total clicks)
+- [x] beautify: fancier CSS + icons
 
 # Getting Started with Create React App
 
