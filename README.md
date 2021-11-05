@@ -1,3 +1,7 @@
+<img src="./README/screenshot.jpg">
+
+using leaflet custom markers (L.divIcon())
+
 # hosted version
 
 https://juliannymark.com/apps/city-bike-viewer
