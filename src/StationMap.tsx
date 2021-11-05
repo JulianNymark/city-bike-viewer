@@ -28,7 +28,6 @@ const MapEventHandler = () => {
 }
 
 const onMapCreate = (map: Map) => {
-  console.log('fetching location...');
   map.locate({watch: true});
 }
 

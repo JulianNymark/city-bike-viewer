@@ -53,14 +53,6 @@ const extractData = (stationInfo: any, stationState: any): StationData => {
 };
 
 export const fetchData = async (setData: React.Dispatch<any>) => {
-  const stationInfo = await fetch(
-    "https://gbfs.urbansharing.com/oslobysykkel.no/station_information.json",
-    {
-      headers: {
-        "Client-Identifier": CLIENT_IDENTIFIER,
-      },
-    }
-  );
   const allData = await Promise.all([fetchStationInfo(), fetchStationState()]);
   setData(extractData(...allData));
 };
