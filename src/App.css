@@ -1,0 +1,60 @@
+.CustomMarkerIcon {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.circle,
+.circle-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.circle-container {
+  position: relative;
+}
+
+.circle-container > p {
+  position: absolute;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  text-align: center;
+  width: 50%;
+}
+
+.bikes {
+  top: -45%;
+  left: 15%;
+}
+
+.docks {
+  top: -5%;
+  left: 30%;
+}
+
+.top-half {
+  height: 50%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: #09f;
+  /* float: left; */
+}
+
+.top-half:after {
+  content: "";
+  display: block;
+  margin: -1px;
+}
+
+.bottom-half {
+  height: 50%;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: rgb(6, 85, 138);
+  /* float: left; */
+}
+
+.rotated {
+  transform: rotate(-30deg);
+}
