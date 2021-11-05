@@ -1,9 +1,17 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { App } from './App';
 
-test('renders learn react link', () => {
+test('zoom buttons', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const zoomIn = screen.getByRole('button', { name: 'Zoom in' });
+  const zoomOut = screen.getByRole('button', { name: 'Zoom out' });
+  expect(zoomIn).toBeInTheDocument();
+  expect(zoomOut).toBeInTheDocument();
+});
+
+test('leaflet attribution link', () => {
+  render(<App />);
+  const link = screen.getByRole('link', { name: 'A JS library for interactive maps' });
+  expect(link).toBeInTheDocument();
 });
