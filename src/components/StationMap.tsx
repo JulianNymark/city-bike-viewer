@@ -34,10 +34,6 @@ const MapEventHandler = () => {
   return null;
 };
 
-const onMapCreate = (map: Map) => {
-  map.locate({ watch: true });
-};
-
 export const StationMap = ({ mapRef, data }: { mapRef: React.MutableRefObject<Map|null>, data: StationListData }) => {
   return (
     <MapContainer

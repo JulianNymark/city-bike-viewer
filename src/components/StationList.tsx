@@ -1,25 +1,8 @@
-import React, { MouseEvent, MouseEventHandler, useState } from 'react';
-import { Space, Table, Tag } from 'antd';
+import React, { MouseEvent } from 'react';
+import { Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { StationData, StationListData } from '../StationData';
-import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons';
 import { Map } from 'leaflet';
-import { FilterValue } from 'antd/es/table/interface';
-import { time } from 'console';
-
-interface DataType {
-    key: string;
-    name: string;
-    age: number;
-    address: string;
-    tags: string[];
-}
-
-type filterChoices = 'bikes' | 'docks';
-type filterSetting = {
-    columnKey?: filterChoices,
-    value?: number,
-}
 
 export const StationList = ({ mapRef, data, bikeFilter, dockFilter }:
     {
@@ -71,7 +54,7 @@ export const StationList = ({ mapRef, data, bikeFilter, dockFilter }:
                 return {
                     onClick: async (event: MouseEvent<HTMLElement>) => {
                         const station_id = event.currentTarget.dataset.rowKey;
-                        const station_data = data.find((station) => station.id == station_id);
+                        const station_data = data.find((station) => station.id === station_id);
                         if (station_data?.lat && station_data.lon) {
                             mapRef.current?.panTo(
                                 { lat: station_data.lat, lng: station_data?.lon },
