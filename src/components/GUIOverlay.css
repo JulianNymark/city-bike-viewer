@@ -1,18 +1,39 @@
 .GUI-overlay {
-    position: absolute;
-    top: 100px;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
     z-index: 401;
     margin: 10px;
     justify-content: space-around;
     justify-items: center;
-    height: 100px;
 }
 
 .GUI-overlay > * {
     display: block;
     flex: auto 1 1;
     margin: 5px;
-    padding: 10px;
+    padding: 10px 20px;
+    height: fit-content;
+}
+
+.drawer-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.drawer-button {
+    position: absolute;
+    bottom: 0;
+    z-index: 401;
+
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.ant-drawer-body {
+    padding-top: 0 !important;
+}
+
+Drawer {
+    height: 400px !important;
 }

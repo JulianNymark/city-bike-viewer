@@ -1,4 +1,4 @@
-import { StationData } from "./StationData";
+import { StationListData } from "./StationData";
 
 const CLIENT_IDENTIFIER = "julians-citybikeviewer"; // best practice to send in Client-Identifier header
 
@@ -26,7 +26,6 @@ const fetchStationInfo = async () => {
     }
   );
   raw_state_station_info = await stationInfo.json();
-  console.debug(raw_state_station_info);
   return raw_state_station_info;
 };
 
@@ -41,12 +40,11 @@ const fetchStationState = async () => {
     }
   );
   raw_state_station_state = await stationState.json();
-  console.debug(raw_state_station_state);
   return raw_state_station_state;
 };
 
-const extractData = (stationInfo: any, stationState: any): StationData => {
-  const stations: StationData = stationInfo.data.stations.map(
+const extractData = (stationInfo: any, stationState: any): StationListData => {
+  const stations: StationListData = stationInfo.data.stations.map(
     (station: any) => {
       // Since I couldn't finde a guarantee that the API will return the data in a stable ordering / sorted ordering.
       // I have decided to use clientside "data processing", that is .find() to extract the parts I want from the server response.
@@ -63,6 +61,7 @@ const extractData = (stationInfo: any, stationState: any): StationData => {
         lat: station.lat,
         bikesAvailable,
         docksAvailable,
+        id: station.station_id,
       };
     }
   );

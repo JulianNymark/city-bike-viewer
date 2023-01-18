@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { fetchData, updateStationState } from "./DataFetching";
-import { StationData } from "./StationData";
+import { StationListData } from "./StationData";
 import { StationMap } from "./components/StationMap";
 import { GUIOverlay } from "./components/GUIOverlay";
+import { Map } from "leaflet";
 
 export const App = () => {
-  const [data, setData] = useState<StationData>([]);
+  const [data, setData] = useState<StationListData>([]);
+  const leafletMap = useRef<Map|null>(null);
 
   useEffect(() => {
     fetchData(setData);
@@ -16,8 +18,8 @@ export const App = () => {
   return (
     <div className="App">
       {/* <h1>oslo city bikes</h1> */}
-      <GUIOverlay />
-      <StationMap data={data} />
+      <GUIOverlay data={data} mapRef={leafletMap} />
+      <StationMap data={data} mapRef={leafletMap} />
     </div>
   );
 }

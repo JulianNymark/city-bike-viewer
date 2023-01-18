@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBicycle, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import { setCurrentPosition } from "../utils";
-import { StationData } from "../StationData";
+import { StationListData } from "../StationData";
 import "./StationMap.css";
 import { HTMLStringCustomMarkerIcon } from "../CustomMarkerIcon";
 
@@ -38,13 +38,16 @@ const onMapCreate = (map: Map) => {
   map.locate({ watch: true });
 };
 
-export const StationMap = ({ data }: { data: StationData }) => {
+export const StationMap = ({ mapRef, data }: { mapRef: React.MutableRefObject<Map|null>, data: StationListData }) => {
   return (
     <MapContainer
       center={[59.905, 10.709]}
       zoom={13}
       scrollWheelZoom={true}
-      whenCreated={onMapCreate}
+      whenCreated={(map) => {
+        map.locate({watch: true});
+        mapRef.current = map;
+      }}
     >
       <MapEventHandler />
       <TileLayer

@@ -1,9 +1,10 @@
-type Station = {
+export type StationData = {
   lon: number,
   lat: number,
   name: string,
   bikesAvailable: number,
   docksAvailable: number,
+  id: string,
 }
 
-export type StationData = Station[]
+export type StationListData = StationData[]
