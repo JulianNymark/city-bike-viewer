@@ -57,11 +57,15 @@ export const StationMap = ({ mapRef, data }: { mapRef: React.MutableRefObject<Ma
       {data.map((station) => {
         let customIcon = divIcon({
           className: "CustomMarkerIcon",
-          html: HTMLStringCustomMarkerIcon({docksAvailable: station.docksAvailable, bikesAvailable: station.bikesAvailable}),
+          html: HTMLStringCustomMarkerIcon({
+            docksAvailable: station.docksAvailable, 
+            bikesAvailable: station.bikesAvailable,
+            station_id: station.id
+          }),
         });
         return (
           <Marker position={[station.lat, station.lon]} icon={customIcon}>
-            <Popup>
+            <Popup data-station-id={"test"}>
               <h3>{station.name}</h3>
               <FontAwesomeIcon icon={faBicycle} /> {station.bikesAvailable}
               <br />

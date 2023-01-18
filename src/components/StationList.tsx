@@ -5,6 +5,7 @@ import { StationData, StationListData } from '../StationData';
 import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons';
 import { Map } from 'leaflet';
 import { FilterValue } from 'antd/es/table/interface';
+import { time } from 'console';
 
 interface DataType {
     key: string;
@@ -66,12 +67,18 @@ export const StationList = ({ mapRef, data, bikeFilter, dockFilter }:
     return (
         <Table
             onRow={(record, rowIndex) => {
+                const animation_duration_ms = 200;
                 return {
-                    onClick: (event: MouseEvent<HTMLElement>) => {
+                    onClick: async (event: MouseEvent<HTMLElement>) => {
                         const station_id = event.currentTarget.dataset.rowKey;
                         const station_data = data.find((station) => station.id == station_id);
                         if (station_data?.lat && station_data.lon) {
-                            mapRef.current?.panTo({ lat: station_data.lat, lng: station_data?.lon }, { animate: true });
+                            mapRef.current?.panTo(
+                                { lat: station_data.lat, lng: station_data?.lon },
+                                { animate: true, duration: animation_duration_ms/1000 });
+                            await new Promise(res => setTimeout(res, animation_duration_ms));
+                            const element = document.querySelector(`[data-station-id='${station_data.id}']`) as HTMLElement;
+                            element.click();
                         }
                     },
                 }

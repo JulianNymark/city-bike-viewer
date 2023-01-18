@@ -25,7 +25,7 @@ export const GUIOverlay = ({ mapRef, data }: { mapRef: React.MutableRefObject<Ma
                 <Button className="drawer-button" onClick={showDrawer}>Filtering</Button>
             </div>
             <Drawer
-                contentWrapperStyle={{ height: 'calc(40vh)', position: 'absolute'}}
+                contentWrapperStyle={{ height: 'calc(40vh)', position: 'absolute' }}
                 zIndex={401}
                 placement='bottom'
                 width={500}
@@ -35,8 +35,12 @@ export const GUIOverlay = ({ mapRef, data }: { mapRef: React.MutableRefObject<Ma
                 headerStyle={{ display: 'none' }}
             >
                 <div className="GUI-overlay">
-                    <Button type={bikeFilter ? 'primary' : undefined} onClick={() => { setBikeFilter(!bikeFilter); setDockFilter(false) }}>I have a bike</Button>
-                    <Button type={dockFilter ? 'primary' : undefined} onClick={() => { setDockFilter(!dockFilter); setBikeFilter(false) }}>I need a bike</Button>
+                    <Button
+                        type={bikeFilter ? 'primary' : undefined}
+                        onClick={() => { setBikeFilter(!bikeFilter); setDockFilter(false) }}>I have a bike</Button>
+                    <Button
+                        type={dockFilter ? 'primary' : undefined}
+                        onClick={() => { setDockFilter(!dockFilter); setBikeFilter(false) }}>I need a bike</Button>
                 </div>
                 <div className="list-wrapper">
                     <StationList mapRef={mapRef} data={data} bikeFilter={bikeFilter} dockFilter={dockFilter} />

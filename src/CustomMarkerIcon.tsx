@@ -2,7 +2,8 @@ import React from 'react';
 
 type Props = {
     bikesAvailable: number,
-    docksAvailable: number
+    docksAvailable: number,
+    station_id: string,
 }
 
 export const CustomMarkerIcon = ({bikesAvailable, docksAvailable}: Props) => {
@@ -15,9 +16,9 @@ export const CustomMarkerIcon = ({bikesAvailable, docksAvailable}: Props) => {
 }
 
 // the reason for this is that leaflet divIcon expects a string of rendered markup
-export const HTMLStringCustomMarkerIcon = ({bikesAvailable, docksAvailable}: Props) => {
+export const HTMLStringCustomMarkerIcon = ({bikesAvailable, docksAvailable, station_id}: Props) => {
     return `
-    <div class="circle-container">
+    <div class="circle-container" data-station-id="${station_id}">
         <div class="circle rotated">
             <div class="top-half"></div>
             <div class="bottom-half"></div>
