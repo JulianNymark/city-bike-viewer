@@ -15,7 +15,7 @@ export const CustomMarkerIcon = ({bikesAvailable, docksAvailable}: Props) => {
 }
 
 // the reason for this is that leaflet divIcon expects a string of rendered markup
-export const HTMLSringCustomMarkerIcon = ({bikesAvailable, docksAvailable}: Props) => {
+export const HTMLStringCustomMarkerIcon = ({bikesAvailable, docksAvailable}: Props) => {
     return `
     <div class="circle-container">
         <div class="circle rotated">

@@ -8,10 +8,10 @@ import {
 } from "react-leaflet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBicycle, faLockOpen } from "@fortawesome/free-solid-svg-icons";
-import { setCurrentPosition } from "./utils";
-import { StationData } from "./StationData";
+import { setCurrentPosition } from "../utils";
+import { StationData } from "../StationData";
 import "./StationMap.css";
-import { HTMLSringCustomMarkerIcon } from "./CustomMarkerIcon";
+import { HTMLStringCustomMarkerIcon } from "../CustomMarkerIcon";
 
 let stickyCenter = true; // set this to true to follow the users location
 let willCenterNextTick = true; // this tracks the 'on first load' centering inside location events
@@ -43,7 +43,7 @@ export const StationMap = ({ data }: { data: StationData }) => {
     <MapContainer
       center={[59.905, 10.709]}
       zoom={13}
-      scrollWheelZoom={false}
+      scrollWheelZoom={true}
       whenCreated={onMapCreate}
     >
       <MapEventHandler />
@@ -54,7 +54,7 @@ export const StationMap = ({ data }: { data: StationData }) => {
       {data.map((station) => {
         let customIcon = divIcon({
           className: "CustomMarkerIcon",
-          html: HTMLSringCustomMarkerIcon({docksAvailable: station.docksAvailable, bikesAvailable: station.bikesAvailable}),
+          html: HTMLStringCustomMarkerIcon({docksAvailable: station.docksAvailable, bikesAvailable: station.bikesAvailable}),
         });
         return (
           <Marker position={[station.lat, station.lon]} icon={customIcon}>

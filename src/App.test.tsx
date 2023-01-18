@@ -15,3 +15,5 @@ test('leaflet attribution link', () => {
   const link = screen.getByRole('link', { name: 'A JS library for interactive maps' });
   expect(link).toBeInTheDocument();
 });
+
+// test that updateStationState works? (is called from a refresh button, on interval...)
