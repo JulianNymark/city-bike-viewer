@@ -36,7 +36,7 @@ export const StationList = ({ mapRef, data, bikeFilter, dockFilter }:
             render: (text) => <span>{text}</span>,
         },
         {
-            title: 'Bikes Avail.',
+            title: 'Bikes',
             dataIndex: 'bikesAvailable',
             key: 'bikesAvailable',
             sorter: (a, b) => a.bikesAvailable - b.bikesAvailable,
@@ -49,7 +49,7 @@ export const StationList = ({ mapRef, data, bikeFilter, dockFilter }:
             },
         },
         {
-            title: 'Docks Avail.',
+            title: 'Docks',
             dataIndex: 'docksAvailable',
             key: 'docksAvailable',
             sorter: (a, b) => a.docksAvailable - b.docksAvailable,
@@ -78,7 +78,7 @@ export const StationList = ({ mapRef, data, bikeFilter, dockFilter }:
             }}
             columns={columns}
             dataSource={data}
-            scroll={{ y: 180 }}
+            scroll={{ y: '21.9vh' }}
             rowKey={(record) => record.id}
             pagination={false}
         />)

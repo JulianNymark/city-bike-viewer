@@ -22,7 +22,7 @@
 }
 
 .drawer-button {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     z-index: 401;
 
@@ -31,9 +31,31 @@
 }
 
 .ant-drawer-body {
-    padding-top: 0 !important;
+    padding: 0 !important;
+    overflow-y: hidden !important;
 }
 
 Drawer {
     height: 400px !important;
+}
+
+.list-wrapper {
+    overflow-y: hidden;
+    height: calc(max(45%, 350px));
+}
+
+.ant-drawer-content-wrapper {
+    display: flex;
+    flex-flow: row nowrap ;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    box-shadow: none !important;
+}
+
+.ant-drawer-content-wrapper > div {
+    max-width: 700px;
+    flex: auto 0 1;
+    background-color: white;
+    box-shadow: 0 -6px 16px 0 rgba(0, 0, 0, 0.08),0 -3px 6px -4px rgba(0, 0, 0, 0.12),0 -9px 28px 8px rgba(0, 0, 0, 0.05);
 }

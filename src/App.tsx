@@ -17,7 +17,6 @@ export const App = () => {
 
   return (
     <div className="App">
-      {/* <h1>oslo city bikes</h1> */}
       <GUIOverlay data={data} mapRef={leafletMap} />
       <StationMap data={data} mapRef={leafletMap} />
     </div>
