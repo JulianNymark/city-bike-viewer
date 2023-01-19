@@ -36,7 +36,7 @@ export const StationMap = ({ mapRef, data }: { mapRef: React.MutableRefObject<Ma
       <MapEventHandler />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" // use this while developing (looks messy, but it's free)
-        // url="https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=64e88e13938c4874889cbc2e68171f06" // TODO: use this for "final" (looks nice but only 15k request limit per month is free)
+        // url="https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=64e88e13938c4874889cbc2e68171f06" // NOTE: looks nice but only 15k request limit per month is free
       />
       {data.map((station) => {
         let customIcon = divIcon({

@@ -1,8 +1,8 @@
-<img src="./README/screenshot.jpg">
+<div style="display:flex; width:100%; justify-content: space-around;">
+  <img style='flex: auto 0 1;' src="./README/screenshot.jpg">
+</div>
 
-using leaflet custom markers (L.divIcon())
-
-# hosted version
+# hosted version / DEMO
 
 https://juliannymark.com/apps/city-bike-viewer
 
@@ -12,16 +12,22 @@ https://juliannymark.com/apps/city-bike-viewer
 1. run `npm i` (in project root)
 1. run `npm run start`
 
-## TODO
+# Features
 
-- [x] design & decision (went with a map style design, since data is spatial, leaflet is nice and FLOSS)
-- [x] working map visualization + data fetching (mvp)
-- [x] show current location + centering
-- [x] filtering on bikes available vs docks available (usually you're interested in one of them, but not both)
-- [x] swap out default `<Marker>` rendering with something more custom and informative, showing number of bikes & docks available (reduce total clicks)
-- [x] beautify: fancier CSS + icons
-- [x] auto-update the station information
-- [x] filtering list, sortable, also tapping on rows will trigger `panTo()` of the map view.
+- responsive (looks OK on desktop, looks a little better on mobile!)
+- working map visualization + data fetching
+  - [leafletjs](https://leafletjs.com/) used for the map
+- show current location + centering, on load
+- filtering on bikes available vs docks available 
+  - usually you're interested in one of them, but not both, does not currently filter on the map, only in the table, es tut mir leid! (Why? used the tables own filtering functionality instead of my own filtering prior to feeding the data to both the table _and_ the map...)
+- custom `marker` to be condensed and informative, showing number of bikes & docks available (reduce total clicks)
+- auto-updating station information
+  - fetch station information once on initial page load
+  - fetch station status continuously (every 10 seconds, as suggested by server `max-age` http response header)
+- filtering list, sortable, also tapping on rows will trigger `panTo()` of the map view.
+  - slightly complex usage of [ant tables](https://ant.design/components/table)
+- Low complexity / No central data store
+  - the app is simple & small enough to not need it for now. So there's no Redux or usage of the react context API. It's all just prop passing for now! (plain React)
 
 ---
 
