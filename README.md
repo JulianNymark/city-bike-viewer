@@ -1,6 +1,6 @@
-<div style="display:flex; width:100%; justify-content: space-around;">
-  <img style='flex: auto 0 1;' src="./README/screenshot.jpg">
-</div>
+<p align='center'>
+  <img align='center' src="./README/screenshot.jpg">
+</p>
 
 # hosted version / DEMO
 
