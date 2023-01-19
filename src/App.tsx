@@ -12,7 +12,7 @@ export const App = () => {
 
   useEffect(() => {
     fetchData(setData);
-    setInterval(() => updateStationState(setData), 10000);
+    // setInterval(() => updateStationState(setData), 10000);
   }, []);
 
   return (
