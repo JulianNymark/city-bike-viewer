@@ -13,22 +13,10 @@ import { StationListData } from "../StationData";
 import "./StationMap.css";
 import { HTMLStringCustomMarkerIcon } from "../CustomMarkerIcon";
 
-let stickyCenter = true; // set this to true to follow the users location
-let willCenterNextTick = true; // this tracks the 'on first load' centering inside location events
-
 const MapEventHandler = () => {
   const map = useMapEvents({
     locationfound: (location) => {
       setCurrentPosition(map, location);
-
-      if (willCenterNextTick) {
-        map.setView(location.latlng, 16);
-        willCenterNextTick = stickyCenter;
-      }
-    },
-    dragstart: (event) => {
-      stickyCenter = false;
-      willCenterNextTick = false;
     },
   });
   return null;

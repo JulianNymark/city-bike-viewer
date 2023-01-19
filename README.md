@@ -6,15 +6,24 @@ using leaflet custom markers (L.divIcon())
 
 https://juliannymark.com/apps/city-bike-viewer
 
+# How to run
+
+1. clone the project / download source.
+1. run `npm i` (in project root)
+1. run `npm run start`
+
 ## TODO
 
 - [x] design & decision (went with a map style design, since data is spatial, leaflet is nice and FLOSS)
 - [x] working map visualization + data fetching (mvp)
-- [x] show current location + centering + sticky tracking (until first drag event)
-  - [ ] add button to re-enable centering & sticky tracking of current location
-- [ ] filtering on bikes available vs docks available (usually you're interested in one of them, but not both)
+- [x] show current location + centering
+- [x] filtering on bikes available vs docks available (usually you're interested in one of them, but not both)
 - [x] swap out default `<Marker>` rendering with something more custom and informative, showing number of bikes & docks available (reduce total clicks)
 - [x] beautify: fancier CSS + icons
+- [x] auto-update the station information
+- [x] filtering list, sortable, also tapping on rows will trigger `panTo()` of the map view.
+
+---
 
 # Getting Started with Create React App
 
